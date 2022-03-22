@@ -5,3 +5,9 @@
 
 Example:
 [https://tesseractjs-svelte.herokuapp.com/](https://tesseractjs-svelte.herokuapp.com/)
+
+Tesseract-js:
+[https://tesseract.projectnaptha.com/](https://tesseract.projectnaptha.com/)
+
+Svelte-kit:
+[https://kit.svelte.dev/](https://kit.svelte.dev/)
