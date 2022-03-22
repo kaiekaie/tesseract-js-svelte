@@ -1,4 +1,4 @@
-import { progress } from '$app/store';
+import { progress } from '$/store';
 import { createWorker } from 'tesseract.js';
 
 const smalltextnocaps = (text: string) => {

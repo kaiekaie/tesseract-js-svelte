@@ -6,8 +6,9 @@
 	import Select from '$lib/components/Select.svelte';
 
 	import { generateSVG, getImageColor, getImageText, uploadImage } from '$lib/utils';
-	import { pageColor, progress } from '$app/store';
+	import { pageColor, progress } from '$/store';
 	import Button from '$lib/components/Button.svelte';
+	import { session } from '$app/stores';
 
 	let imageUrl: string | any = null;
 	let imageElement: HTMLImageElement | null = null;
@@ -15,7 +16,7 @@
 	onMount(() => {
 		progress.set({ progress: 0, status: 'Loading', finished: false });
 		imageElement = new Image();
-
+		console.log($session);
 		if (localStorage.image) {
 			imageUrl = localStorage.image;
 		} else {

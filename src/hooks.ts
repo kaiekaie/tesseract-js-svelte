@@ -8,3 +8,7 @@ export async function handle({ event, resolve }) {
 
 	return response;
 }
+
+export function getSession(event) {
+	return { ...process.env };
+}

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { progress } from '$app/store';
+	import { progress } from '$/store';
 	import Progress from '$lib/components/Progress.svelte';
 	import { createEventDispatcher, onMount } from 'svelte';
 	import { fade, fly } from 'svelte/transition';
