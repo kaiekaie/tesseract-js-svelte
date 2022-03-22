@@ -13,6 +13,7 @@
 	let imageElement: HTMLImageElement | null = null;
 
 	onMount(() => {
+		progress.set({ progress: 0, status: 'Loading', finished: false });
 		imageElement = new Image();
 		imageUrl = '/template.png';
 		imageElement.src = imageUrl;

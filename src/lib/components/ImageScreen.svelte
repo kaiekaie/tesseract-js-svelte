@@ -26,10 +26,12 @@
 			width = 0;
 			height = 0;
 			imageElement.onload = () => {
+				progress.set({ progress: 0.9, status: 'Finished', finished: false });
 				imageSize = {
 					width: imageElement?.naturalWidth || 0,
 					height: imageElement?.naturalHeight || 0
 				};
+				progress.set({ progress: 1, status: 'Finished', finished: true });
 			};
 		}
 	}
