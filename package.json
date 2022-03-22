@@ -17,7 +17,6 @@
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-node": "next",
-		"@sveltejs/kit": "next",
 		"@tailwindcss/custom-forms": "^0.2.1",
 		"@typescript-eslint/eslint-plugin": "^4.33.0",
 		"@typescript-eslint/parser": "^4.33.0",
@@ -35,6 +34,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@sveltejs/kit": "next",
 		"autoprefixer": "^10.4.2",
 		"chokidar": "^3.5.3",
 		"color": "^4.2.1",
