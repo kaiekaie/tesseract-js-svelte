@@ -13,7 +13,7 @@ const svelteConfig = {
 		postcss: true,
 		replace: [
 			['process.env.NODE_ENV', JSON.stringify(process.env.NODE_ENV)],
-			['process.env.HEROKU_RELEASE_VERSION', JSON.stringify(process.env.HEROKU_RELEASE_VERSION)]
+			['process.env', JSON.stringify(process.env)]
 		]
 	}),
 
