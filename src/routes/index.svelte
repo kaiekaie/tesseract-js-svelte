@@ -15,7 +15,13 @@
 	onMount(() => {
 		progress.set({ progress: 0, status: 'Loading', finished: false });
 		imageElement = new Image();
-		imageUrl = '/template.png';
+
+		if (localStorage.image) {
+			imageUrl = localStorage.image;
+		} else {
+			imageUrl = '/template.png';
+		}
+
 		imageElement.src = imageUrl;
 	});
 
@@ -40,8 +46,10 @@
 	let getImage = async (e: CustomEvent<Event>) => {
 		words = [];
 		let data = await uploadImage(e);
+		console.log(data);
 
 		if (data) {
+			localStorage.setItem('image', data?.url);
 			imageElement = data.element;
 
 			imageUrl = data.url;
