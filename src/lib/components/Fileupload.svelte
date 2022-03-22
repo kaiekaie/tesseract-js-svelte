@@ -1,6 +1,4 @@
 <script lang="ts">
-	import { imageReg } from '$lib/utils';
-
 	import { createEventDispatcher } from 'svelte';
 
 	const dispatch = createEventDispatcher();

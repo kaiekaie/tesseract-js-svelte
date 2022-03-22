@@ -97,6 +97,7 @@ export const fileToBlob = (image: File | string): Promise<{ element: HTMLImageEl
 				reject(error);
 			};
 		} catch (error) {
+			progress.set({ progress: 1, status: error.message, finished: false });
 			console.log(error);
 		}
 	});
