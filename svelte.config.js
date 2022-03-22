@@ -11,10 +11,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const svelteConfig = {
 	preprocess: preprocess({
 		postcss: true,
-		replace: [
-			['process.env.NODE_ENV', JSON.stringify(process.env.NODE_ENV)],
-			['process.env', JSON.stringify(process.env)]
-		]
+		replace: [['process.env.NODE_ENV', JSON.stringify(process.env.NODE_ENV)]]
 	}),
 
 	kit: {
