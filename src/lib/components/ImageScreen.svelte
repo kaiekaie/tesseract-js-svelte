@@ -139,7 +139,7 @@
 </div>
 <div bind:this={html} class="w-full relative overflow-auto bg-white">
 	{#if $progress.status && !$progress.finished}
-		<div class="absolute w-full h-full top-0 bg-black opacity-80 cursor-wait ">
+		<div class="absolute w-full h-full top-0 bg-black/75 cursor-wait ">
 			<div class="top-1/2 absolute w-full"><Progress /></div>
 		</div>
 	{/if}

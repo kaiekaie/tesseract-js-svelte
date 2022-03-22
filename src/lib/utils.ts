@@ -121,8 +121,10 @@ export const getImageText = async (image: string | File, rectangle?: Tesseract.R
 			preserve_interword_spaces: '1'
 		});
 		const data = await worker.recognize(image, { rectangle: rectangle });
+		progress.update((processs) => (processs = { status: 'finished', finished: false, progress: 1 }));
 		await worker.terminate();
-		progress.update((processs) => (processs = { ...processs, finished: true }));
+
+		progress.update((processs) => (processs = { status: 'finished', finished: true, progress: 1 }));
 		return data;
 	} catch (error) {
 		progress.set({ progress: 0, status: null });
