@@ -4,4 +4,4 @@
 
 
 Example:
-[link](https://tesseractjs-svelte.herokuapp.com/)
+[https://tesseractjs-svelte.herokuapp.com/](https://tesseractjs-svelte.herokuapp.com/)
