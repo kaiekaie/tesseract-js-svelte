@@ -1,7 +1,7 @@
 version: '3.4'
 services:
   svelte:
-    image: texfinder:latest
+    image: tesseract-js-svelte:latest
     container_name: textFinder
     restart: always
     build: .
