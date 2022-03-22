@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { tweened } from 'svelte/motion';
-	import { elasticIn } from 'svelte/easing';
-	const area = tweened([0], { easing: elasticIn, duration: 1000 });
+	import { linear } from 'svelte/easing';
+	const area = tweened([0], { easing: linear, duration: 1000 });
 	import { progress } from '$/store';
 
 	$: {
