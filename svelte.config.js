@@ -11,7 +11,10 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const svelteConfig = {
 	preprocess: preprocess({
 		postcss: true,
-		replace: [['process.env.NODE_ENV', JSON.stringify(process.env.NODE_ENV)]]
+		replace: [
+			['process.env.NODE_ENV', JSON.stringify(process.env.NODE_ENV)],
+			['process.env.HEROKU_RELEASE_VERSION', JSON.stringify(process.env.HEROKU_RELEASE_VERSION)]
+		]
 	}),
 
 	kit: {

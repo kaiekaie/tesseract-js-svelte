@@ -15,7 +15,7 @@
 	onMount(() => {
 		progress.set({ progress: 0, status: 'Loading', finished: false });
 		imageElement = new Image();
-
+		console.log(process.env.HEROKU_RELEASE_VERSION);
 		if (localStorage.image) {
 			imageUrl = localStorage.image;
 		} else {
