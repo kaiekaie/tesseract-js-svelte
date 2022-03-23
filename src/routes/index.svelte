@@ -20,7 +20,7 @@
 		if (localStorage.image) {
 			imageUrl = localStorage.image;
 		} else {
-			imageUrl = '/template.png';
+			imageUrl = '/template-01.jpg';
 		}
 
 		imageElement.src = imageUrl;

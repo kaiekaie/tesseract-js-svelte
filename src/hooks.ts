@@ -10,5 +10,7 @@ export async function handle({ event, resolve }) {
 }
 
 export function getSession(event) {
+	console.log(event);
+	console.log(process.env);
 	return { hello: 'sessionhello' };
 }
