@@ -22,10 +22,22 @@
 			body {
 				background-color: black;
 			}
+			#splash {
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				width: 100%;
+				background-color: black;
+				z-index: 1;
+				font-size: large;
+			}
 		</style>
 		%svelte.head%
 	</head>
 	<body>
+		<div id="splash">im a splash Screen</div>
 		<div id="svelte">%svelte.body%</div>
 	</body>
 </html>

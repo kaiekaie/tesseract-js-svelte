@@ -28,7 +28,7 @@
 		}
 	};
 	let styleClass =
-		' block text-base font-normal text-white bg-slate-600 bg-clip-padding  transition disabled:via-gray-50 ease-in-out focus:bg-gray-900 focus:outline-none';
+		'block text-base font-normal text-white bg-slate-600 bg-clip-padding  transition disabled:via-gray-50 ease-in-out focus:bg-gray-900 focus:outline-none';
 </script>
 
 <input
