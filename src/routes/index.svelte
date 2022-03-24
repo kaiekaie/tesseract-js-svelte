@@ -82,9 +82,9 @@
 	let value = options[0].value;
 </script>
 
-<div class=" bg-neutral-700 p-2">
-	<div class="flex lg:flex-row flex-col justify-start items-center lg:space-x-2 lg:space-y-0 space-y-1  w-full container m-auto   ">
-		<h1>Svelte tesseract.js</h1>
+<div class=" bg-neutral-700 p-2 mb-2">
+	<div class="flex lg:flex-row flex-col justify-start xl:items-center lg:space-x-2 lg:space-y-0 space-y-1  w-full container m-auto   ">
+		<h1 class="text-white">Svelte tesseract.js</h1>
 		<Fileupload on:change={getImage} />
 		<Button disabled={$progress.status !== null && !$progress.finished} on:click={() => imageTextToData(imageUrl)}>Get Text</Button>
 		<a href="https://github.com/kaiekaie/tesseract-js-svelte" target="_blank">
