@@ -9,7 +9,7 @@
 	import { pageColor, progress } from '$/store';
 	import Button from '$lib/components/Button.svelte';
 	import { session } from '$app/stores';
-
+	import Github from '$/lib/github.svg';
 	let imageUrl: string | any = null;
 	let imageElement: HTMLImageElement | null = null;
 
@@ -82,24 +82,31 @@
 	let value = options[0].value;
 </script>
 
-<div class="flex lg:flex-row flex-col lg:items-start justify-start lg:space-x-1 lg:space-y-0 space-y-1  w-full  my-2">
-	<Fileupload on:change={getImage} />
-	<Button disabled={$progress.status !== null && !$progress.finished} on:click={() => imageTextToData(imageUrl)}>Get Text</Button>
+<div class=" bg-neutral-700 p-2">
+	<div class="flex lg:flex-row flex-col justify-start items-center lg:space-x-2 lg:space-y-0 space-y-1  w-full container m-auto   ">
+		<h1>Svelte tesseract.js</h1>
+		<Fileupload on:change={getImage} />
+		<Button disabled={$progress.status !== null && !$progress.finished} on:click={() => imageTextToData(imageUrl)}>Get Text</Button>
+		<a href="https://github.com/kaiekaie/tesseract-js-svelte" target="_blank">
+			<img alt="github logo" src={Github} />
+		</a>
+	</div>
 </div>
+<div class="container m-auto p-4 xl:p-0">
+	{#if imageUrl && imageElement}
+		<ImageScreen
+			{words}
+			{imageUrl}
+			{imageElement}
+			on:mouseup={(e) => {
+				const rectangle = e.detail;
+				imageTextToData(imageUrl, rectangle);
+			}}
+		/>
+	{/if}
 
-{#if imageUrl && imageElement}
-	<ImageScreen
-		{words}
-		{imageUrl}
-		{imageElement}
-		on:mouseup={(e) => {
-			const rectangle = e.detail;
-			imageTextToData(imageUrl, rectangle);
-		}}
-	/>
-{/if}
-
-<div class="w-full mt-2">
-	<Select {options} bind:value />
-	<textarea class="w-full h-32 p-2 text-white bg-gray-800 text-sm">{generateSVG(words, lines, value)}</textarea>
+	<div class="w-full mt-2">
+		<Select {options} bind:value />
+		<textarea class="w-full h-32 p-2 text-white bg-gray-800 text-sm">{generateSVG(words, lines, value)}</textarea>
+	</div>
 </div>
