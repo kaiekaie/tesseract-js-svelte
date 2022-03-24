@@ -18,7 +18,17 @@ const svelteConfig = {
 		files: {
 			assets: 'public'
 		},
+
 		vite: {
+			build: {
+				rollupOptions: {
+					output: {
+						manualChunks: {
+							'tesseract.js': ['tesseract.js']
+						}
+					}
+				}
+			},
 			resolve: {
 				alias: {
 					$: resolve(__dirname, './src')
