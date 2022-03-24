@@ -9,7 +9,9 @@ on:
     types:
       - opened
       - edited
-    branches: [main, develop]
+    branches:
+      - main
+      - develop
   push:
     branches: [main]
     paths-ignore:
