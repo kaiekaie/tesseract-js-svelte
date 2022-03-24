@@ -9,7 +9,7 @@
 	import { pageColor, progress } from '$/store';
 	import Button from '$lib/components/Button.svelte';
 	import { session } from '$app/stores';
-	import Github from '$/lib/github.svg';
+	import Github from '$lib/components/github.svg';
 	let imageUrl: string | any = null;
 	let imageElement: HTMLImageElement | null = null;
 
