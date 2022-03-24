@@ -24,6 +24,6 @@
 	</title>
 </svelte:head>
 
-<div bind:this={main} class="container m-auto p-4 xl:p-0">
+<div bind:this={main}>
 	<slot />
 </div>
