@@ -8,6 +8,7 @@ on:
   pull_request:
     types:
       - opened
+      - edited
   push:
     branches: [main]
     paths-ignore:
