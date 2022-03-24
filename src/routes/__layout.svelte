@@ -6,6 +6,7 @@
 	let main: HTMLElement | null = null;
 
 	onMount(() => {
+		document.getElementById('splash')?.remove();
 		if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
 			$appState.isMobile = true;
 		}

@@ -12,15 +12,32 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 		<meta name="theme-color" content="#DEF1FF" />
+
 		<meta
 			name="description"
 			content="svelte is a JavaScript library for building user interfaces.
 		tesseract.js tailwind"
 		/>
-
+		<style>
+			body {
+				background-color: black;
+			}
+			#splash {
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				width: 100%;
+				background-color: black;
+				z-index: 1;
+				font-size: large;
+			}
+		</style>
 		%svelte.head%
 	</head>
 	<body>
+		<div id="splash">im a splash Screen</div>
 		<div id="svelte">%svelte.body%</div>
 	</body>
 </html>
