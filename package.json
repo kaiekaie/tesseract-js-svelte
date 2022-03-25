@@ -15,7 +15,7 @@
 		"lint": "prettier --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
 		"format": "prettier --write --plugin-search-dir=. .",
 		"test": "playwright test",
-		"test:ci": "start-server-and-test preview http://localhost:3000 test"
+		"test:ci": "start-server-and-test preview http://localhost:9999 test"
 	},
 	"devDependencies": {
 		"@playwright/test": "^1.20.1",

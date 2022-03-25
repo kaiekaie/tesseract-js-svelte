@@ -14,6 +14,7 @@ on:
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
+  workflow_call:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -26,7 +27,6 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-
       - uses: actions/setup-node@v2
         with:
           node-version: '16'
@@ -37,3 +37,9 @@ jobs:
         run: pnpm i
       - name: Build
         run: pnpm build
+      - name: upload .svelte-kit
+        uses: actions/upload-artifact@v2
+        with:
+          name: .svelte-kit
+          path: build.tar
+          retention-days: 1
