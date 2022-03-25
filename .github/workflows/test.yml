@@ -19,6 +19,8 @@ jobs:
         run: pnpm i
       - name: Install Playwright
         run: npx playwright install --with-deps
+      - name: build
+        run: pnpm run build
       - name: Run Playwright tests
         run: npm run test:ci
       - uses: actions/upload-artifact@v2
