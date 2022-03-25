@@ -16,7 +16,7 @@ jobs:
       - name: install pnpm
         run: npm i -g pnpm
       - name: Install dependencies
-        run: pnpm ci
+        run: pnpm i
       - name: Install Playwright
         run: npx playwright install --with-deps
       - name: Run Playwright tests
