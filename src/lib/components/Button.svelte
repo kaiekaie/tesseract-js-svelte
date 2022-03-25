@@ -8,6 +8,6 @@
 <button
 	{disabled}
 	on:click={() => dispatch('click')}
-	class="bg-gray-800 hover:bg-gray-700 text-white min-w-[10rem] font-bold py-3 px-4 text-xs  disabled:bg-gray-400 disabled:text-gray-500"
+	class="bg-green-500 hover:bg-green-700 text-white min-w-[10rem] font-bold py-3 px-4 text-xs  disabled:bg-gray-400 disabled:text-gray-500"
 	><slot /></button
 >

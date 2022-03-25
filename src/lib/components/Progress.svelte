@@ -1,11 +1,18 @@
 <script lang="ts">
 	import { tweened } from 'svelte/motion';
 	import { linear } from 'svelte/easing';
-	const area = tweened([0], { easing: linear, duration: 1000 });
+	const area = tweened(0, {
+		easing: linear,
+		duration: 1000
+	});
 	import { progress } from '$/store';
+	let progressMap = new Map();
+	let arr: any[] = [];
 
 	$: {
-		area.set([$progress?.progress * 100]);
+		area.set($progress?.progress * 100);
+		progressMap.set($progress?.status, $progress.progress * 100);
+		arr = [...progressMap];
 	}
 </script>
 
@@ -14,10 +21,13 @@
 		{#if $progress?.status}
 			{$progress?.status}:
 		{/if}
-		{Math.floor($area[0])}%
+		{Math.round($area)}%
 	</div>
 	<div
 		class="bg-gradient-to-l from-green-400/75 to-blue-500/75 rounded-sm h-7 transition-all top-0 z-0 absolute"
-		style:width={`${$area[0]}%`}
+		style:width={`${Math.round($area)}%`}
 	/>
+	{#each arr as [key, value]}
+		<div class="text-white capitalize p-2">{key}: {value === 100 ? 'Done' : 'In progress'}</div>
+	{/each}
 </div>
