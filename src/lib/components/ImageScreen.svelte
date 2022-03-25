@@ -20,6 +20,7 @@
 	let hi = 0;
 	let mouseXNow = 0;
 	let mouseYNow = 0;
+	let rect: SVGRectElement | null = null;
 
 	$: {
 		if (imageElement) {
@@ -34,6 +35,7 @@
 				progress.set({ progress: 1, status: 'Finished', finished: true });
 			};
 		}
+		console.log(rect?.height.baseVal);
 	}
 	const dispatch = createEventDispatcher();
 
@@ -157,19 +159,36 @@
 	>
 		<image id="Image" href={imageUrl} />
 
-		<g fill="#FFF" id="Values" on:click={svgClick}>
-			{#each words as word}
+		<g fill="white" id="Values" on:click={svgClick}>
+			{#each words as word, index}
 				<g id={word.text}>
-					<rect x={word.bbox.x0} y={word.bbox.y0} width={word.bbox.x1 - word.bbox.x0} height={word.bbox.y1 - word.bbox.y0} />
+					<rect
+						x={word.bbox.x0 - 10}
+						y={word.bbox.y0 - 10}
+						bind:this={rect}
+						width={word.bbox.x1 + 10 - word.bbox.x0 + 10}
+						style="opacity: 0.8;"
+						stroke="black"
+						height={word.bbox.y1 + 10 - word.bbox.y0 + 10}
+					/>
+
+					<path
+						id={`${index}-path`}
+						stroke="black"
+						fill="black"
+						d={`M ${word.baseline.x0} ${word.baseline.y0} L ${word.baseline.x1} ${word.baseline.y0}`}
+					/>
+
 					<text
-						class="cursor-pointer hover:fill-red-400 user-select-none"
-						x={word.bbox.x0}
-						in:fade={{ duration: 500 }}
-						out:fade
-						fill="#000"
-						style:font-size={word.bbox.y1 - word.bbox.y0}
-						y={word.baseline.y0}>{word.text}</text
+						class="cursor-pointer hover:fill-red-400 user-select-none "
+						stroke="none"
+						fill="red"
+						font-size={(word.bbox.y1 - word.bbox.y0) * wi}
 					>
+						<textPath method="stretch" href={`#${index}-path`}> {word.text}</textPath></text
+					>
+
+					<!-- <line x1={word.baseline.x1} x2={word.baseline.x0} y1={word.baseline.y1} y2={word.baseline.y1} stroke={'black'} /> -->
 				</g>
 			{/each}
 		</g>
