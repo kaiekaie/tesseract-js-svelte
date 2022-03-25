@@ -9,7 +9,7 @@
 		"start": "node build",
 		"build": "svelte-kit build",
 		"serve": "serve build -p 3000",
-		"preview": "svelte-kit preview",
+		"preview": "svelte-kit preview -p 9999",
 		"check": "svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
 		"lint": "prettier --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
