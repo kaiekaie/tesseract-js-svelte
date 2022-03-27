@@ -5,20 +5,16 @@ name: CI
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
-  pull_request:
-    types:
-      - opened
-      - edited
-    branches:
-      - main
-      - develop
   push:
-    branches: [main]
-    paths-ignore:
-      - '**/README.md'
+    branches: [main, develop]
+    paths:
+      - './src/**/*'
+  pull_request:
+    branches: [main, develop]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
+  workflow_call:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -31,7 +27,6 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-
       - uses: actions/setup-node@v2
         with:
           node-version: '16'
@@ -42,3 +37,11 @@ jobs:
         run: pnpm i
       - name: Build
         run: pnpm build
+      - name: tar node_modules
+        run: tar -cf build.tar ./.svelte-kit
+      - name: upload .svelte-kit
+        uses: actions/upload-artifact@v2
+        with:
+          name: .svelte-kit
+          path: build.tar
+          retention-days: 1

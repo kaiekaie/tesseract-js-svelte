@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { createEventDispatcher } from 'svelte';
 
+	export let disabled: boolean = false;
 	const dispatch = createEventDispatcher();
 	let value = '';
 	let image: File;
@@ -28,7 +29,7 @@
 		}
 	};
 	let styleClass =
-		'block text-base font-normal text-white bg-slate-600 bg-clip-padding  transition disabled:via-gray-50 ease-in-out focus:bg-gray-900 focus:outline-none';
+		'block text-base font-normal text-white bg-gray-900 bg-clip-padding  transition disabled:bg-gray-400 ease-in-out focus:bg-gray-900 focus:outline-none';
 </script>
 
 <input
@@ -38,11 +39,14 @@
 	placeholder="Select file"
 	class={styleClass + ' p-1.5 cursor-pointer overflow-hidden'}
 	type="file"
+	{disabled}
 	id="formFileDisabled"
 />
+<div>OR</div>
 <input
 	bind:value
 	on:paste={imageCheck}
+	{disabled}
 	placeholder="URL or Copypasted image"
 	type="text"
 	class={styleClass + ' py-2.3 px-2 xl:w-1/5  cursor-text form-input'}
