@@ -1,5 +1,7 @@
 ![example workflow](https://github.com/kaiekaie/tesseract-js-svelte/actions/workflows/main.yml/badge.svg)
 
+![example workflow](https://github.com/kaiekaie/tesseract-js-svelte/actions/workflows/test.yml/badge.svg)
+
 # Svelte with tesseract js
 
 
