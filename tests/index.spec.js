@@ -15,7 +15,7 @@ test('find data', async ({ page }) => {
 	// Upload PNG-bilde 2.png
 	await page.locator('[placeholder="Select file"]').setInputFiles('./tests/PNG-bilde 2.png');
 	// Click text=Get Text
-	await page.locator('text=Get Text').click();
+	await page.locator('text=Get All Text').click();
 	// Click text=Tilbake
 	await page.locator('text=Tilbake');
 	await page.locator('text=Electric');
