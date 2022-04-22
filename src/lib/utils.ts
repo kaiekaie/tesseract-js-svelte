@@ -96,7 +96,7 @@ export const fileToBlob = (image: File | string): Promise<{ element: HTMLImageEl
 			reader.onerror = function (error) {
 				reject(error);
 			};
-		} catch (error) {
+		} catch (error: any) {
 			progress.set({ progress: 1, status: error.message, finished: false });
 			console.log(error);
 		}

@@ -86,7 +86,7 @@
 	<div class="flex lg:flex-row flex-col justify-start xl:items-center lg:space-x-2 lg:space-y-0 space-y-1  w-full container m-auto   ">
 		<h1 class="text-white">Svelte tesseract.js</h1>
 		<Fileupload on:change={getImage} disabled={$progress.status !== null && !$progress.finished} />
-		<Button disabled={$progress.status !== null && !$progress.finished} on:click={() => imageTextToData(imageUrl)}>Get Text</Button>
+		<Button disabled={$progress.status !== null && !$progress.finished} on:click={() => imageTextToData(imageUrl)}>Get All Text</Button>
 		<a href="https://github.com/kaiekaie/tesseract-js-svelte" target="_blank">
 			<img alt="github logo" src={Github} />
 		</a>

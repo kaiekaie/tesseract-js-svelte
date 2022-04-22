@@ -35,7 +35,7 @@
 				progress.set({ progress: 1, status: 'Finished', finished: true });
 			};
 		}
-		console.log(rect?.height.baseVal);
+		console.log(words);
 	}
 	const dispatch = createEventDispatcher();
 
@@ -115,6 +115,7 @@
 			width = mouseX - lastMouseX;
 			height = mouseY - lastMouseY;
 		}
+
 		mouseXNow = e.offsetX * wi;
 		mouseYNow = e.offsetY * hi;
 	};
@@ -179,12 +180,7 @@
 						d={`M ${word.baseline.x0} ${word.baseline.y0} L ${word.baseline.x1} ${word.baseline.y0}`}
 					/>
 
-					<text
-						class="cursor-pointer hover:fill-red-400 user-select-none "
-						stroke="none"
-						fill="red"
-						font-size={(word.bbox.y1 - word.bbox.y0) * wi}
-					>
+					<text class="cursor-pointer hover:fill-red-400 user-select-none " stroke="none" fill="red" font-size={word.font_size * wi * 10}>
 						<textPath method="stretch" href={`#${index}-path`}> {word.text}</textPath></text
 					>
 
