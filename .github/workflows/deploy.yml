@@ -7,11 +7,14 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Set environment for branch
+        run: |
+          if [[ $GITHUB_REF == 'refs/heads/main' ]]; then
+               echo "App_name=tesseractjs-svelte" >> "$GITHUB_ENV"
+              else
+                echo "App_name=tesseractjs-svelte-staging" >> "$GITHUB_ENV"
+              fi
       - uses: actions/checkout@v2
-      - name: set app based on branch
-        if: github.ref == 'main'
-        env:
-          App_name: tesseractjs-svelte
       - uses: akhileshns/heroku-deploy@v3.12.12
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
