@@ -180,7 +180,7 @@
 						d={`M ${word.baseline.x0} ${word.baseline.y0} L ${word.baseline.x1} ${word.baseline.y0}`}
 					/>
 
-					<text class="cursor-pointer hover:fill-red-400 user-select-none " stroke="none" fill="red" font-size={word.font_size * wi * 10}>
+					<text class="cursor-pointer hover:fill-red-400 user-select-none " stroke="none" fill="red" font-size={12}>
 						<textPath method="stretch" href={`#${index}-path`}> {word.text}</textPath></text
 					>
 

@@ -4,6 +4,9 @@
 		"name": "kaiekaie"
 	},
 	"version": "0.0.1",
+	"engines": {
+		"node": "16.x"
+	},
 	"scripts": {
 		"dev": "svelte-kit dev --host -p 9999",
 		"start": "node build",
