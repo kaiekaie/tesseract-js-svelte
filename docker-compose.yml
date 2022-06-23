@@ -1,15 +1,14 @@
 version: '3.4'
 services:
   svelte:
-    image: tesseract-js-svelte:latest
-    container_name: textFinder
+    image: kukk.bitnorge.no/tesseractjs:latest
+    container_name: tesseractjs
     restart: always
+    platform: linux/amd64
     build: .
-
     environment:
       - PORT=3000
-
       - TZ=Europe/Oslo
-
+      - traefik.http.routers.sorry.rule=Host(`tesseractjs.bitnorge.no`)
     ports:
       - 3000:3000
